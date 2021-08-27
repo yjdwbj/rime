@@ -1,0 +1,167 @@
+# default.custom.yaml
+# save it to:
+#   ~/.config/ibus/rime  (linux)
+#   ~/Library/Rime       (macos)
+#   %APPDATA%\Rime       (windows)
+
+
+
+patch:
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: [中文,西文]
+    - name: full_shape
+      states: [全角,半角]
+    - name: simplification
+      reset: 1
+      states: [漢字,汉字]
+    - name: ascii_punct
+      states: [ 。，, ．， ]
+
+
+  style:
+    style/hanb_font: HanaMinB.ttf
+    color_scheme: starcraft    # 這項用於選中下面定義的新方案
+  preset_color_schemes/starcraft:  # 在配色方案列表裏加入標識爲 starcraft 的新方案
+    name: 星際我爭霸／StarCraft
+    author: Contralisk <contralisk@gmail.com>, original artwork by Blizzard Entertainment
+    text_color: 0xccaa88             # 編碼行文字顏色，24位色值，用十六進制書寫方便些，順序是藍綠紅0xBBGGRR
+    candidate_text_color: 0x30bb55   # 候選項文字顏色，當與文字顏色不同時指定
+    back_color: 0x000000             # 底色
+    border_color: 0x1010a0           # 邊框顏色，與底色相同則爲無邊框的效果
+    hilited_text_color: 0xfecb96     # 高亮文字，即與當前高亮候選對應的那部份輸入碼
+    hilited_back_color: 0x000000     # 設定高亮文字的底色，可起到凸顯高亮部份的作用
+    hilited_candidate_text_color: 0x60ffa8  # 高亮候選項的文字顏色，要醒目！
+    hilited_candidate_back_color: 0x000000  # 高亮候選項的底色，若與背景色不同就會顯出光棒
+
+  schema_list:
+    - schema: wubi86_jidian
+    - schema: numbers
+    - schema: luna_pinyin_simp
+    - schema: luna_pinyin
+    - schema: jap_poly
+    - schema: wubi_trad
+    - schema: stroke
+
+  # Menu
+  menu:
+    page_size: 9                    # 候选词数量
+  switcher:
+    caption: "【 输入法设置 】"
+    hotkeys:
+      - "Control+0"
+      - "Control+grave"
+      - F4
+    abbreviate_options: true
+    fold_options: true
+    option_list_separator: '/'
+    save_options:
+      - full_shape
+      - ascii_punct
+      - simplification
+      - extended_charset
+
+  #-----------------------------------------------
+  # 中英文切换自定义
+  #-----------------------------------------------
+  # inline_ascii  在输入法的临时英文编辑区内输入字母，数字，符号，空格等，回车上屏后自动复位到中文
+  # commit_text   已输入的候选文字上屏并切换至英文输入模式
+  # commit_code   已输入的编码字符上屏并切换至英文输入模式
+  # -----------------------------------------------
+  # 参考链接： https://gist.github.com/lotem/2981316
+
+  ascii_composer:
+    good_old_caps_lock: true       # true: 在保持 cap 键原有的特征， false: 点击不会切换大小写
+    switch_key:
+      Caps_Lock: commit_code        # 如果想用 cap 键切换中英文输入，就修改为上面三种的任一一种，否则用 noop
+      Shift_L: inline_ascii          # macOs 上 shift 键不区别左右，设置参数同上
+      Shift_R: commit_code
+      Control_L: noop
+      Control_R: noop
+
+
+  key_binder:
+    bindings:
+      #     - {accept: comma, send: 2, when: has_menu} #候选2 用逗号选择 （修改的时候不要多加或少加空格，跟前面的对齐就好了）
+      #     - {accept: period, send: 3, when: has_menu} #候选3 用句号选择
+      - {accept: semicolon, send: 2, when: has_menu} #候选2 用分号
+      - {accept: apostrophe, send: 3, when: has_menu} #候选3 用单引号
+      - {accept: bracketleft, send: Page_Up, when: paging}
+      - {accept: bracketright, send: Page_Down, when: has_menu}
+
+  punctuator:
+    import_preset: symbols
+    full_shape:
+      " ": {commit: "　"}
+      "!": {commit: "！"}
+      "\"": {pair: ["“", "”"]}
+      "#": ["＃", "⌘"]
+      "$": "￥"
+      "%": "％"
+      "&": "＆"
+      "'": {pair: ["‘", "’"]}
+      "(": "（"
+      ")": "）"
+      "*": ["＊", "・", "×"]
+      "+": "＋"
+      ",": {commit: "，"}
+      "-": "－"
+      .: {commit: "。"}
+      "/": ["／", "÷"]
+      ":": {commit: "："}
+      ";": {commit: "；"}
+      "<": ["《", "〈", "«", "‹"]
+      "=": "＝"
+      ">": ["》", "〉", "»", "›"]
+      "?": {commit: "？"}
+      "@": "＠"
+      "[": ["「", "【", "〔", "［"]
+      "\\": ["、", "＼"]
+      "]": ["」", "】", "〕", "］"]
+      "^": {commit: "……"}
+      _: "——"
+      "`": "｀"
+      "{": ["『", "〖", "｛"]
+      "|": ["·", "｜", "§", "¦"]
+      "}": ["』", "〗", "｝"]
+      "~": "～"
+    half_shape:
+      "!": {commit: "！"}
+      "\"": {pair: ["“", "”"]}
+      "#": "#"
+      "$": "￥"
+      "%": ["%", "％", "°", "℃"]
+      "&": "&"
+      "'": {pair: ["‘", "’"]}
+      "(": "（"
+      ")": "）"
+      "*": ["*", "・", "×"]
+      "+": "+"
+      ",": {commit: "，"}
+      "-": "-"
+      .: {commit: "。"}
+      "/": {commit: "、"}
+      ":": {commit: "："}
+      ";": {commit: "；"}
+      "<": {commit: "《"}
+      "=": "="
+      ">": {commit: "》"}
+      "?": {commit: "？"}
+      "@": "@"
+      "[": {commit: "【"}
+      "\\": {commit: "、"}
+      "]": {commit: "】"}
+      "^": {commit: "……"}
+      _: "——"
+      "`": "`"
+      "{": "『"
+      "|": "|"
+      "}": "』"
+      "~": "~"
+  recognizer:
+    import_preset: default
+    patterns:
+      email: "^[-_.0-9A-Za-z]*@.*$"
+      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
