@@ -8,9 +8,9 @@ schema:
   author:
     - 创始人 王永民先生
   description: |
-    五笔字形 86 极点极爽版
+    五笔字形 86 极点
   dependencies:
-#    - pinyin_simp
+    - pinyin_simp
 
 switches:
   - name: ascii_mode
@@ -48,21 +48,25 @@ engine:
 #    - lua_filter@single_char_first_filter # 单字优先方法
 
 speller:
-
-  max_code_length: 4                    # 四码上屏
+  delimiter: " ;'"
+  # max_code_length: 4                    # 四码上屏
   auto_select: true                     # 自动上屏
   auto_select_unique_candidate: true    # 无重码自动上屏
+  algebra:
+    - 'abbrev/^([a-z]).+$/$1/'
+    - 'abbrev/^([zcs]h).+$/$1/'
 
 translator:
-  dictionary: wubi86_jidian             # 翻译器将调取此字典文件
+  # dictionary: wubi86_jidian             # 翻译器将调取此字典文件
+  dictionary: fcitx_wbx
   enable_charset_filter: true
   enable_completion: true               # 是否显示编码未输入完整的词条
-  enable_sentence: false                # 开关语句模式
+  enable_sentence: true                # 开关语句模式
   enable_user_dict: true                # 是否开启用户词典（用户词典记录动态字词频，用户词）
   enable_encoder: true                  # 自动造词
   encode_commit_history: false          # 是否对已上屏的词自动上屏
-  max_phrase_length: 10                 # 单词最大词长
-  db_class: tabledb                     # userdb - 二进制 / tabledb - 人类语言
+  max_phrase_length: 4                 # 单词最大词长
+  # db_class: tabledb                     # userdb - 二进制 / tabledb - 人类语言
   disable_user_dict_for_patterns:       # z开头的输入忽略，对应下面的拼音反查，
     - "^z.*$"
 
@@ -87,4 +91,4 @@ recognizer:
   import_preset: default
   patterns:
     punct: '^/([0-9]0?|[A-Za-z]+)$'
-    reverse_lookup: "`[a-z]*'?$"
+    reverse_lookup: "^z[a-z]*'?$"

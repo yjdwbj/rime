@@ -21,7 +21,8 @@ patch:
 
 
   style:
-    style/hanb_font: HanaMinB.ttf
+    hanb_font: HanaMinB.ttf #扩充字体
+    candidate_use_cursor: true
     color_scheme: starcraft    # 這項用於選中下面定義的新方案
   preset_color_schemes/starcraft:  # 在配色方案列表裏加入標識爲 starcraft 的新方案
     name: 星際我爭霸／StarCraft
@@ -40,6 +41,7 @@ patch:
     - schema: numbers
     - schema: luna_pinyin_simp
     - schema: luna_pinyin
+    - schema: pinyin_simp
     - schema: jap_poly
     - schema: wubi_trad
     - schema: stroke
@@ -89,7 +91,8 @@ patch:
       - {accept: apostrophe, send: 3, when: has_menu} #候选3 用单引号
       - {accept: bracketleft, send: Page_Up, when: paging}
       - {accept: bracketright, send: Page_Down, when: has_menu}
-
+  translator:
+    max_phrase_length: 8                 # 单词最大词长
   punctuator:
     import_preset: symbols
     full_shape:

@@ -2,16 +2,42 @@
 #@/db_name	wubi86_jidian.txt
 #@/db_type	tabledb
 #@/rime_version	1.4.0
-#@/tick	36
-在	d	18
+#@/tick	79
+工	a	2
+式	aa	1
+了	b	1
+在	d	23
 圧	dfd	1
 厅	ds	2
+有	e	1
 地	f	4
 城	fd	1
 直	fh	1
-一	g	2
+一	g	4
+王	ggg	1
+事情	gkng	1
+珍	gw	1
 具	hw	1
-号	kgn	1
-输入	lwty	1
-要	s	3
-符	twf	1
+是	j	1
+号	kgn	2
+畋	lty	1
+办	lw	1
+输入	lwty	2
+典	maw	1
+展	nae	1
+情况	nguk	1
+这	p	1
+要	s	5
+械	sa	1
+格	stk	1
+么	tc	1
+私吞	tcgd	1
+么王	tcgg	1
+符	twf	2
+发	v	1
+什么	wftc	1
+个	wh	1
+主	y	1
+词	yngk	1
+么王	enctcg	1
+么王	enctcgg	1

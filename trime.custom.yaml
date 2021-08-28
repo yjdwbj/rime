@@ -7,10 +7,13 @@ patch:
   "style/hanb_font": HanaMinB.ttf
   "style/color_scheme": google
   "style/horizontal_gap": 4
-  "style/vertical_gap": 8
+  "style/vertical_gap": 6
   "style/round_corner": 16
   "style/auto_caps": ascii
-  "translator/dictionary": fcitx_wbx.092m
+  "style/key_height": 40
+  "style/layout/min_length": 8
+  "translator/dictionary": fcitx_wbx
+  "translator/enable_user_dict": false
   "translator/enable_sentence": false
   "reverse_lookup/prefix": "`"
   "recognizer/patterns/reverse_lookup": "^`[a-z]*'?$"
