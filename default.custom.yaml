@@ -39,11 +39,11 @@ patch:
   schema_list:
     - schema: wubi86_jidian
     - schema: numbers
-    - schema: luna_pinyin_simp
     - schema: luna_pinyin
+    # - schema: easy_en
+    - schema: luna_pinyin_simp
     - schema: pinyin_simp
     - schema: jap_poly
-    - schema: wubi_trad
     - schema: stroke
 
   # Menu

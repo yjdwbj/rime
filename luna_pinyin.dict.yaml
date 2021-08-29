@@ -29,6 +29,9 @@
 ---
 name: luna_pinyin
 version: "2019.07.24"
+import_tables:
+  - luna_pinyin.practical
+  - luna_pinyin.poetry
 sort: by_weight
 use_preset_vocabulary: true
 ...
@@ -48542,7 +48545,7 @@ use_preset_vocabulary: true
 𫛶	chi
 𫛸	ti
 
-#Unicode 7.0 
+#Unicode 7.0
 璴	chu
 鰰	shen
 舮	lu

@@ -16,7 +16,7 @@
 * 这里主要是记录网上链接，各种配置与词库都是热心网友供献，你可以稍作修改，或者不作修改都能有很好的体验。如果自已有空也可以定制出自已的风格，且可以
   同步各种平台上使用。
 
-
+* [awesome rime](https://github.com/sgalal/awesome-rime)
 * [Android 上的 RIME 输入法 trime 同文输入法使用 ](https://einverne.github.io/post/2021/04/use-trime-input-method-rime-on-android.html)
 * [使用 Trime 在 Android 上输入五笔](https://wzyboy.im/post/1251.html)
 * [同文安卓輸入法平臺/Trime: Rime IME for Android](https://github.com/osfans/trime)
