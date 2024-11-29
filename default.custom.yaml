@@ -22,6 +22,7 @@ patch:
 
   style:
     hanb_font: HanaMinB.ttf #扩充字体
+    candidate_font: LXGWWenKai-Regular.ttf
     candidate_use_cursor: true
     color_scheme: starcraft    # 這項用於選中下面定義的新方案
   preset_color_schemes/starcraft:  # 在配色方案列表裏加入標識爲 starcraft 的新方案
@@ -54,7 +55,7 @@ patch:
     hotkeys:
       - "Control+0"
       - "Control+grave"
-      - F4
+      - F8
     abbreviate_options: true
     fold_options: true
     option_list_separator: '/'
